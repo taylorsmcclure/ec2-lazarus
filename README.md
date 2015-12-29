@@ -8,10 +8,11 @@
 <li>boto3</li>
 <code>$ sudo pip install boto3</code>
 <li>Python</li>
+<li><b>NOT</b> tested on Windows at the moment, only OS X and Linux</li>
 </ul>
 
 <h2>Usage</h2>
-1) Ensure your AWS CLI credentials are set. Verify with <code>$ aws configure</code>
+1) Ensure your AWS CLI credentials are set. Verify with <code>$ aws configure</code> or <code>$ cat ~/.aws/credentials</code>
 
 2) Execute the python script <code>python ec2-lazarus.py</code>
 
