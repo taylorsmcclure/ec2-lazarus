@@ -40,25 +40,27 @@
 </ul>
 
 <h2>Usage</h2>
-1) Ensure your AWS CLI credentials are set. Verify with <code>$ aws configure</code> or <code>$ cat ~/.aws/credentials</code>
+<ol>
+<li>Ensure your AWS CLI credentials are set. Verify with <code>$ aws configure</code> or <code>$ cat ~/.aws/credentials</code></li>
 
-2) Execute the python script <code>python ec2-lazarus.py</code>
+<li>Execute the python script <code>python ec2-lazarus.py</code></li>
 
-3) Input your unreachable instance ID.
+<li>Input your unreachable instance ID.</li>
 
-4) Your unreachable instance must be in the "stopped" state. If not the script will notify you.
+<li>Your unreachable instance must be in the "stopped" state. If not the script will notify you.</li>
 
-5) Input a keypair name stored in AWS. This will be the keypair you will use to login to the recovery instance.
+<li>Input a keypair name stored in AWS. This will be the keypair you will use to login to the recovery instance.</li>
 
-6) Associate an existing security group ID with this (ex: sg-412cdef1). At a minimum you will need TCP 22 accessible from your IP to SSH to your recovery instance.
+<li>Associate an existing security group ID with this (ex: sg-412cdef1). At a minimum you will need TCP 22 accessible from your IP to SSH to your recovery instance.</li>
 
-7) Choose which region your unreachable instance is in and where the recovery instance will be launched
+<li>Choose which region your unreachable instance is in and where the recovery instance will be launched</li>
 (<strong>NOTE:</strong> you will need to have <code>aws configure</code> set to the region you specify.)
 
-8) You will see a temporary instance with a name tag of "ec2-lazarus recovery instance" with your instance's root volume mounted as /dev/sdf. SSH to the instance and perform diagnostics/troubleshooting there.
+<li>You will see a temporary instance with a name tag of "ec2-lazarus recovery instance" with your instance's root volume mounted as /dev/sdf. SSH to the instance and perform diagnostics/troubleshooting there.</li>
 
-9) Once finished detach the root volume and place and mount it back on your original instance.
+<li>Once finished detach the root volume and place and mount it back on your original instance.</li>
 <strong>Note:</strong> Depending on your AMI or OS your mount point for the root volume may be /dev/sda1 || /dev/sda || /dev/xvda || something else entirely.
+</ol>
 
 <h2>FAQ</h2>
 <ol>
